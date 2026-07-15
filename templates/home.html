@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SmartLender - Application Form</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 50px; background-color: #f7f7f7; }
+        .form-box { max-width: 500px; background: white; padding: 30px; margin: auto; border-radius: 8px; box-shadow: 0px 0px 10px rgba(0,0,0,0.1); }
+        label { font-weight: bold; display: block; margin-top: 15px; }
+        select, input { width: 100%; padding: 10px; margin-top: 5px; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; background: #28a745; color: white; border: none; margin-top: 25px; font-size: 16px; cursor: pointer; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <div class="form-box">
+        <h2>SmartLender Loan Application</h2>
+        <form action="/predict" method="post">
+            <label>Gender:</label>
+            <select name="gender"><option value="0">Male</option><option value="1">Female</option></select>
+
+            <label>Married:</label>
+            <select name="married"><option value="0">No</option><option value="1">Yes</option></select>
+
+            <label>Dependents:</label>
+            <input type="number" name="dependents" min="0" value="0" required>
+
+            <label>Education:</label>
+            <select name="education"><option value="1">Graduate</option><option value="0">Not Graduate</option></select>
+
+            <label>Self Employed:</label>
+            <select name="self_employed"><option value="0">No</option><option value="1">Yes</option></select>
+
+            <label>Applicant Monthly Income ($):</label>
+            <input type="number" name="applicant_income" value="5000" required>
+
+            <label>Co-Applicant Monthly Income ($):</label>
+            <input type="number" name="coapplicant_income" value="0" required>
+
+            <label>Loan Amount ($ in thousands):</label>
+            <input type="number" name="loan_amount" value="150" required>
+
+            <label>Loan Term (In Months):</label>
+            <input type="number" name="loan_term" value="360" required>
+
+            <label>Credit History:</label>
+            <select name="credit_history"><option value="1">Good</option><option value="0">Bad</option></select>
+
+            <label>Property Area:</label>
+            <select name="property_area"><option value="2">Urban</option><option value="1">Semiurban</option><option value="0">Rural</option></select>
+
+            <button type="submit">Predict Status</button>
+        </form>
+    </div>
+</body>
+</html>
